@@ -1,0 +1,134 @@
+﻿<section id="detail" class="mainbar" ng-controller="timeEntry as vm">
+    <form class="form-horizontal">
+        <fieldset class="col-sm-12 col-lg-12 col-md-12">
+            <div class="form-group">
+                <div class="panel panel-primary" ng-repeat="(dayIdx, dayEntry) in vm.timeEntries | orderBy:vm.daysOrderBy">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ dayEntry.dateDisplay }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th width="15%">Project</th>
+                                    <th width="15%">Task</th>
+                                    <th width="16%">Start</th>
+                                    <th width="16%">End</th>
+                                    <th style="text-align:center" width="10%">Duration</th>
+                                    <th width="20%">Comment</th>
+                                    <th style="text-align:center" width="10%">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-show="$first">
+                                    <td>
+                                        <select class="form-control" ng-model="vm.blankTimeEntry.Project" ng-options="project.Name for project in vm.projects" ng-change="vm.updateTasks()">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" ng-disabled="vm.blankTimeEntry.Tasks.length <= 1" ng-model="vm.blankTimeEntry.Task" ng-options="task.Name for task in vm.blankTimeEntry.Tasks">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" id="dropdownTimeIn" role="button" data-toggle="dropdown" href="" data-target="#" >
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" style="font-size:small" data-ng-model="vm.blankTimeEntry.TimeIn" />
+                                                    <!--<span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>-->
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownTimeIn">
+                                                <datetimepicker data-ng-model="vm.blankTimeEntry.TimeIn" data-datetimepicker-config="{ startView: 'hour', dropdownSelector: '#dropdownTimeIn'}" data-on-set-time="vm.onTimeInSet(newDate, vm.blankTimeEntry)" />
+                                            </ul>
+                                        </div>
+                                        <!--input class="form-control" type="dateTimeLocal" ng-model="vm.blankTimeEntry.TimeIn"></input></td>-->
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" id="dropdownTimeOut" role="button" data-toggle="dropdown" href="" data-target="#">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" style="font-size:small" data-ng-model="vm.blankTimeEntry.TimeOut" />
+                                                    <!--<span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>-->
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownTimeOut">
+                                                <datetimepicker data-ng-model="vm.blankTimeEntry.TimeOut" data-datetimepicker-config="{ startView: 'hour', dropdownSelector: '#dropdownTimeOut'}" data-on-set-time="vm.onTimeOutSet(newDate, vm.blankTimeEntry)" />
+                                            </ul>
+                                        </div>
+                                        <!--<input class="form-control" type="dateTimeLocal" ng-model="vm.blankTimeEntry.TimeOut"></input>-->
+                                    </td>
+                                    <td></td>
+                                    <td><input class="form-control" ng-model="vm.blankTimeEntry.Comment" /></td>
+                                    <td align="center"><button type="button" class="btn btn-default" ng-disabled="vm.blankTimeEntry.Task === undefined" ng-click="vm.startWork(dayEntry.dateDisplay)"><i class="fa fa-play"></i></button></td>
+                                </tr>
+                                <tr ng-repeat="(teIdx, te) in dayEntry.data">
+                                    <td ng-bind="te.ProjectName" />
+                                    <td ng-bind="te.ProjectTaskName" />
+                                    <td ng-show="!te.isInEditMode" ng-bind="vm.formatToTime(te.TimeIn)" class="clickable" ng-click="vm.beginEditEntry(te)" />
+                                    <td ng-show="!te.isInEditMode" ng-bind="vm.formatToTime(te.TimeOut, te.TimeIn)" class="clickable" ng-click="vm.beginEditEntry(te)" />
+                                    <td ng-show="te.isInEditMode">
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" id="dropdown{{dayIdx}}{{teIdx}}In" role="button" data-toggle="dropdown" href="" data-target="#">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" style="font-size:small" data-ng-model="te.TimeIn" />
+                                                    <!--<span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>-->
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown{{dayIdx}}{{teIdx}}In">
+                                                <datetimepicker data-ng-model="te.TimeIn" data-datetimepicker-config="{ startView: 'hour', dropdownSelector: '#dropdown{{dayIdx}}{{teIdx}}In'}" data-on-set-time="vm.onTimeInSet(newDate, te)" />
+                                            </ul>
+                                        </div>
+                                        <!--<input class="form-control" type="dateTimeLocal" ng-model="te.TimeIn" ui-keydown="{esc: 'vm.cancelEditEntry(te)'}" />-->
+                                    </td>
+                                    <td ng-show="te.isInEditMode">
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" id="dropdown{{dayIdx}}{{teIdx}}Out" role="button" data-toggle="dropdown" href="" data-target="#">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" style="font-size:small" data-ng-model="te.TimeOut" />
+                                                    <!--<span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>-->
+                                                </div>
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown{{dayIdx}}{{teIdx}}Out">
+                                                <datetimepicker data-ng-model="te.TimeOut" data-datetimepicker-config="{ startView: 'hour', dropdownSelector: '#dropdown{{dayIdx}}{{teIdx}}Out'}" data-on-set-time="vm.onTimeOutSet(newDate, te)" />
+                                            </ul>
+                                        </div>
+                                        <!--<input class="form-control" type="dateTimeLocal" ng-model="te.TimeOut" />-->
+                                    </td>
+                                    <td style="text-align:center" ng-bind="vm.formatDuration(te.TotalTime)" />
+                                    <td ng-show="!te.isInEditMode" ng-bind="te.Comment" class="clickable" ng-click="vm.beginEditEntry(te)" />
+                                    <td ng-show="te.isInEditMode"><input class="form-control" ng-model="te.Comment" /></td>
+                                    <td align="center" style="white-space: nowrap;">
+                                        <button type="button" class="btn btn-default" ng-show="!te.isInEditMode && te.TimeOut != undefined" ng-click="vm.resumeWork(te)"><i class="fa fa-play"></i></button>
+                                        <button type="button" class="btn btn-default" ng-show="te.TimeOut == undefined" ng-click="vm.stopWork(te)"><i class="fa fa-pause"></i></button>
+                                        <button type="button" class="btn btn-success" ng-show="te.isInEditMode" ng-click="vm.updateEntry(te, false, dayEntry.dateDisplay)"><i class="fa fa-save fa-lg"></i></button>
+                                        <button type="button" class="btn btn-danger" ng-show="te.isInEditMode" ng-click="vm.deleteEntry(te)"><i class="fa fa-trash-o fa-lg"></i></button>
+                                        <button type="button" class="btn btn-info" ng-show="te.isInEditMode" ng-click="vm.cancelEditEntry(te)"><i class="fa fa-undo fa-lg"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <td align="center">{{ vm.totalDay(dayEntry.data) }}</td>
+                                    <td/>
+                                    <td/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</section>

@@ -1,0 +1,6 @@
+D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\bin\SleekPeek2.dll.config
+D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\bin\SleekPeek2.dll
+D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\bin\SleekPeek2.pdb
+D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.csprojResolveAssemblyReference.cache
+D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.dll
+D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.pdb

@@ -1,0 +1,270 @@
+.control-group-title {
+    padding: 15px;
+}
+
+.alert {
+    font-size: large;
+}
+
+.alert-larger {
+    font-size: x-large;
+}
+
+.alert-error {
+    color: red;
+}
+
+
+.logo {
+    background-image: url('logo.png');
+    background-size: contain;
+    width: 60px;
+    height: 49px;
+    background-repeat: no-repeat;
+    margin-left: 0;
+    position: absolute;
+}
+
+.navbar {
+    min-height: 52px;
+}
+
+@media (min-width: 480px) {
+    .app-title {
+        margin-left: 65px;
+        margin-top: 8px;
+        font-size: x-large;
+        position: absolute;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 480px) {
+    .app-title {
+        margin-left: 65px;
+        margin-top: 12px;
+        font-size: large;
+        position: absolute;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 300px) {
+    .app-title {
+        width:0;
+    }
+}
+
+@media (min-width: 480px) {
+    .app-title-separator {
+        background-image: url('images/tiltedSeparator.png');
+        width: 10px;
+        height: 50px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 380px;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+    .app-title-separator {
+        background-image: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .left-align-nav {
+        margin-left: 400px;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .left-align-nav {
+        margin-left: 30px;
+    }
+}
+
+.auth-buttons{
+     margin-right: 60px;
+}
+
+/*textarea:disabled {
+    cursor: text !important;
+}
+input:disabled 
+{
+    cursor: text !important;
+}*/
+
+
+.spinner {
+    margin: 20% auto 0 auto;
+    left: auto;
+    top: auto !important;
+}
+
+/*#region Splash */
+#splash-page {
+    z-index: 99999 !important;
+}
+
+    #splash-page .bar {
+        width: 100%;
+    }
+
+.page-splash {
+    z-index: 99999 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6777A0;
+    opacity: .9;
+    pointer-events: auto;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+}
+
+.page-splash-message {
+    text-align: center;
+    margin: 20% auto 0 auto;
+    font-family: Futura, Arial, sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #002F60;
+    padding: 0;
+}
+
+    .page-splash-message.page-splash-message-subtle {
+        margin: 30% auto 0 auto;
+        font-size: 120%;
+    }
+
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.margin-top-ten{
+    margin-top:10px;
+}
+
+
+.table .clickable:hover {
+    cursor: pointer;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+
+/* CUSTOM NAV BAR
+    --------------------*/
+.navbar-default {
+	background-color: #3a83c2;
+    background-image: none;
+	border-color: #245b8a;
+}
+.navbar-default .navbar-brand {
+	color: #f8fdff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #bce0ff;
+}
+.navbar-default .navbar-text {
+	color: #f8fdff;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #f8fdff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #bce0ff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background-image: none;
+    color: white;
+	background-color: #245b8a;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: white;
+	background-color: #245b8a;
+}
+.navbar-default .navbar-toggle {
+	border-color: #245b8a;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #245b8a;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #f8fdff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #f8fdff;
+}
+.navbar-default .navbar-link {
+	color: #f8fdff;
+}
+.navbar-default .navbar-link:hover {
+	color: #bce0ff;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #f8fdff;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #bce0ff;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		color: white;
+		background-color: #245b8a;
+        background-image: none;
+	}
+}

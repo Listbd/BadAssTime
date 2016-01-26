@@ -1,0 +1,94 @@
+﻿<section id="detail" class="mainbar" ng-controller="project as vm">
+    <form class="form-horizontal">
+        <fieldset class="col-sm-12 col-lg-12 col-md-12">
+            <div class="form-group" ng-show="vm.project != undefined">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Project Info</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="control-group">
+                            <label class="col-md-2 control-label text-left">Name</label>
+                            <div class="col-lg-9 col-md-9">
+                                <input class="form-control darker"
+                                       type="text"
+                                       id="name"
+                                       disabled="disabled"
+                                       data-ng-model="vm.project.Name"
+                                       autocomplete="off" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Roles</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Id</th>
+                                    <th>External Key</th>
+                                    <th style="text-align:center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="projectRole in vm.project.ProjectRoles">
+                                    <td>{{projectRole.Name}}</td>
+                                    <td>{{projectRole.ProjectRoleId}}</td>
+                                    <td>{{projectRole.ExternalSystemKey}}</td>
+                                    <td align="center"><button type="button" class="btn btn-danger" ng-click="vm.deleteRole(projectRole)">Delete</button></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-control" ng-model=vm.blankRole.Name  /></td>
+                                    <td><input class="form-control" readonly="readonly" /></td>
+                                    <td><input class="form-control" ng-model=vm.blankRole.ExternalSystemKey /></td>
+                                    <td align="center"><button type="button" class="btn btn-success" ng-click="vm.addRole(vm.blankRole)">Add</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tasks</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>External Key</th>
+                                    <th>Billable?</th>
+                                    <th>Require Comment</th>
+                                    <th style="text-align:center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="projectTask in vm.project.ProjectTasks">
+                                    <td>{{projectTask.Name}}</td>
+                                    <td>{{projectTask.ExternalSystemKey}}</td>
+                                    <td>{{projectTask.Billable}}</td>
+                                    <td>{{projectTask.RequireComment}}</td>
+                                    <td align="center"><button type="button" class="btn btn-danger" ng-click="vm.deleteTask(projectTask)">Delete</button></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="form-control" ng-model=vm.blankTask.Name /></td>
+                                    <td><input class="form-control" ng-model=vm.blankTask.ExternalSystemKey /></td>
+                                    <td><input type="checkbox" ng-model=vm.blankTask.Billable /></td>
+                                    <td><input type="checkbox" ng-model=vm.blankTask.RequireComment /></td>
+                                    <td align="center"><button type="button" class="btn btn-success" ng-click="vm.addTask(vm.blankTask)">Add</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</section>

@@ -1,0 +1,57 @@
+﻿<section class="mainbar" data-ng-controller="login as vm">
+    <p class="alert alert-error" data-ng-show="vm.errorMessage.length > 0">
+        <span>{{ vm.errorMessage }}</span>
+    </p>
+
+    <form class="form-horizontal" id="loginForm" name="loginForm">
+        <fieldset>
+            <legend>Login</legend>
+            <div class="form-group">
+                <label class="col-lg-2 col-sm-2 col-md-1 control-label text-left" for="username">
+                    User Name
+                </label>
+                <div class="col-lg-4 col-sm-4 col-md-4">
+                    <input class="form-control"
+                           type="text"
+                           name="username"
+                           id="username"
+                           data-ng-model="vm.username"
+                           placeholder="Username"
+                           autocomplete="off"
+                           required
+                           autofocus="autofocus" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 col-sm-2 col-md-1 control-label text-left" for="password">
+                    Password
+                </label>
+                <div class="col-lg-4 col-sm-4 col-md-4">
+                    <input type="password"
+                           class="form-control"
+                           name="password"
+                           id="password"
+                           data-ng-model="vm.password"
+                           data-key-enter="vm.login()"
+                           placeholder="Password"
+                           autocomplete="off"
+                           required />
+                </div>
+            </div>
+            <div class="btn-toolbar">
+                <div class="col-lg-10 col-lg-offset-2 col-md-offset-1">
+                    <button class="btn btn-primary"
+                            data-ng-click="vm.login()"
+                            data-ng-disabled="loginForm.$invalid">
+                        Sign In
+                    </button>
+                    <button class="btn btn-success" style="margin-left:42px"
+                            data-ng-click="vm.signup()"
+                            data-ng-disabled="loginForm.$invalid">
+                        Join the Coolness
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</section>

@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html ng-app="app">
+<head>
+    <title>World's Best Time-Tracking App</title>
+    <link rel="stylesheet" href="Content/bootstrap-theme.css">
+    <link rel="stylesheet" href="Content/bootstrap.css">
+    <link rel="stylesheet" href="Content/ng-grid.css" />
+    <link rel="stylesheet" href="Content/toastr.css" />
+    <link rel="stylesheet" href="Content/customtheme.css" />
+    <link rel="stylesheet" href="Content/loading-bar.css" />
+    <link rel="stylesheet" href="Content/font-awesome.css" />
+    <link rel="stylesheet" href="Content/datetimepicker.css" />
+</head>
+<body>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+    <script src="Scripts/ng-grid.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/loading-bar.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/datetimepicker.js"></script>
+    <script src="app/common.js"></script>
+    <script src="app/logger.js"></script>
+    <script src="app/app.js?version=1"></script>
+    <script src="app/authService.js"></script>
+    <script src="app/login.js"></script>
+    <script src="app/projects.js"></script>
+    <script src="app/project.js"></script>
+    <script src="app/export.js"></script>
+    <script src="app/timeEntry.js"></script>
+    <script src="app/timeTracking.js"></script>
+
+    <div class="navbar-wrapper" ng-controller="navController">
+        <div class="container">
+            <div class="navbar navbar-default">
+                <a class="logo" href="#/projects" style="margin-left:8px;margin-top:1px"></a>
+                <div class="app-title navbar-text">World's Best Time-Tracking</div>
+                <div data-ng-class="{true:'nav-collapse collapse',false:'nav-collapse'}[vm.isCollapsed==true]">
+                    <ul class="nav navbar-nav pull-right" style="margin-right:1px">
+                        <li ng-class="{active:isActive('/projects')}">
+                            <a href="#/projects"><i class="fa fa-list-alt"></i><span class="hidden-xs hidden-sm"> Projects</span></a>
+                        </li>
+                        <li ng-class="{active:isActive('/timeEntry')}">
+                            <a href="#/timeEntry"><i class="fa fa-clock-o"></i><span class="hidden-xs hidden-sm"> Time Entry</span></a>
+                        </li>
+                        <li ng-class="{active:isActive('/export')}">
+                            <a href="#/export"><i class="fa fa-cloud-download"></i><span class="hidden-xs hidden-sm"> Export</span></a>
+                        </li>
+                        <li>
+                            <a href="#/login"><i class="fa fa-sign-out"></i><span class="hidden-xs hidden-sm"> Log Out</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="content" class="content">
+        <div id="main-wrapper">
+            <div id="main" class="container">
+                <div ng-view></div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

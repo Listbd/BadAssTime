@@ -1,0 +1,47 @@
+﻿<section class="mainbar" data-ng-controller="export as vm">
+    <form class="form-horizontal" id="exportForm" name="exportForm">
+        <fieldset>
+            <legend>Export Data Entries</legend>
+            <div class="form-group">
+                <label class="col-lg-2 col-sm-2 col-md-1 control-label text-left" for="startdate">
+                    From:
+                </label>
+                <div class="col-lg-4 col-sm-4 col-md-4">
+                    <input class="form-control"
+                           type="text"
+                           name="startdate"
+                           id="startdate"
+                           data-ng-model="vm.from"
+                           placeholder="Start Date"
+                           autocomplete="off"
+                           autofocus="autofocus" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 col-sm-2 col-md-1 control-label text-left" for="enddate">
+                    To:
+                </label>
+                <div class="col-lg-4 col-sm-4 col-md-4">
+                    <input class="form-control"
+                           type="text"
+                           name="enddate"
+                           id="enddate"
+                           data-ng-model="vm.to"
+                           placeholder="End Date"
+                           autocomplete="off"
+                           autofocus="autofocus" />
+                </div>
+            </div>
+            <div class="btn-toolbar">
+                <div class="col-lg-10 col-lg-offset-2 col-md-offset-1">
+                    <button class="btn btn-primary" data-ng-click="vm.exportTimeData('excel')">
+                        Export to Excel
+                    </button>&nbsp;&nbsp;
+                    <!--<button class="btn btn-primary" data-ng-click="vm.exportTimeData('json')">
+                        Export JSON
+                    </button>-->
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</section>
