@@ -215,3 +215,4 @@ pip-log.txt
 .mr.developer.cfg
 Application/WorldsBestTimeTrackingApp/SleekPeek2/obj/Debug/SleekPeek2.csproj.FileListAbsolute.txt
 *.cache
+*.suo
