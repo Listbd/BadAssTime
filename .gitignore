@@ -38,7 +38,6 @@ local.properties
 
 # User-specific files
 *.suo
-*.v12.suo
 *.user
 *.sln.docstates
 
@@ -216,6 +215,6 @@ pip-log.txt
 .mr.developer.cfg
 Application/WorldsBestTimeTrackingApp/SleekPeek2/obj/Debug/SleekPeek2.csproj.FileListAbsolute.txt
 *.cache
-Application/WorldsBestTimeTrackingApp/SleekPeek2.v12.suo
+
 
 
