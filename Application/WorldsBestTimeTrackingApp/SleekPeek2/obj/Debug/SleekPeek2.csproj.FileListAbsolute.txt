@@ -4,3 +4,9 @@ D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\bin\Sl
 D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.csprojResolveAssemblyReference.cache
 D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.dll
 D:\Source\BadAssBikeBros\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.pdb
+D:\Source\BadAssTime\Application\WorldsBestTimeTrackingApp\SleekPeek2\bin\SleekPeek2.dll.config
+D:\Source\BadAssTime\Application\WorldsBestTimeTrackingApp\SleekPeek2\bin\SleekPeek2.dll
+D:\Source\BadAssTime\Application\WorldsBestTimeTrackingApp\SleekPeek2\bin\SleekPeek2.pdb
+D:\Source\BadAssTime\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.csprojResolveAssemblyReference.cache
+D:\Source\BadAssTime\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.dll
+D:\Source\BadAssTime\Application\WorldsBestTimeTrackingApp\SleekPeek2\obj\Debug\SleekPeek2.pdb

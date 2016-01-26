@@ -216,3 +216,5 @@ pip-log.txt
 Application/WorldsBestTimeTrackingApp/SleekPeek2/obj/Debug/SleekPeek2.csproj.FileListAbsolute.txt
 *.cache
 *.suo
+*.suo
+Application/WorldsBestTimeTrackingApp/SleekPeek2/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
