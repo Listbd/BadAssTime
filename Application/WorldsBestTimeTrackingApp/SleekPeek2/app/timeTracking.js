@@ -8,7 +8,8 @@
     function timeTracking(common, cfg, authService) {
         var $http = common.$http;
         var $q = common.$q;
-        var apiurl = "https://csgprohackathonapi.azurewebsites.net/api";
+        var apiurl = "https://b-timeback.azurewebsites.net/api";
+        //var apiurl = "https://csgprohackathonapi.azurewebsites.net/api";
         //var apiurl = "http://localhost:57214/api";
 
         var service = {
