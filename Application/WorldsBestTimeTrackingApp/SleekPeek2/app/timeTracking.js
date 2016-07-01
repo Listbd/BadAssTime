@@ -1,4 +1,6 @@
-﻿(function () {
+﻿/* second test */
+
+(function () {
     'user strict';
 
     var factoryId = 'timeTracking';
